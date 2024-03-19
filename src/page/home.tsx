@@ -1,33 +1,34 @@
-import { AppBar, Toolbar, IconButton, Typography } from "@mui/material";
-import { Box } from "@mui/system";
-import { Link } from "react-router-dom";
-import HomeIcon from '@mui/icons-material/Home';
+import { User } from "../model/data";
+import HomeAfterLogin from "./homeAfterLogin";
+import LoginPage from "./login";
+import ShowAllUser from "./showAllUser";
+
+
 
 function HomePage() {
-  return (<>
-    <div>
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="fixed" style={{backgroundColor:'pink'}}>
-        <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            style={{width:'50px'}}
-            sx={{ mr: 2 }}
-          >
-            <Link to={'/'}><HomeIcon/></Link>
-          </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            News
-          </Typography>
-        </Toolbar>
-      </AppBar>
-    </Box>
 
-    </div>
-  </>)
+
+
+  function chkLogin() {
+
+    console.log(userStorage);
+    if (userStorage != null || undefined) {
+      if (userStorage.type == 99) {
+        return ShowAllUser()
+      }else{
+        return HomeAfterLogin()
+      }
+    }else{
+      return LoginPage();
+    }
+  }
+
+  const userStorage: User = JSON.parse(localStorage.getItem("objUser")!);
+
+
+  return (
+    chkLogin()
+  )
 }
 
 export default HomePage;

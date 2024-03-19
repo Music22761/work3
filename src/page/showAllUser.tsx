@@ -19,7 +19,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 function ShowAllUser() {
   const userStorage: User = JSON.parse(localStorage.getItem("objUser")!);
-//   const [user,setUser] = useState();
+  console.log(userStorage);
 
   const navigate = useNavigate();
 
@@ -106,8 +106,6 @@ function ShowAllUser() {
           {data.users.map((e) => (
             userAll(e)
           ))}
-
-          {/* {console.log(user)} */}
         </Grid>
       </div>
     </>

@@ -18,8 +18,12 @@ import {useNavigate } from "react-router-dom";
 function HomeAfterLogin() {
   const userStorage: User = JSON.parse(localStorage.getItem("objUser")!);
   const navigate = useNavigate();
+  
+  
 
   function userLanmark(e:Landmark) {
+
+    
     if (userStorage.country ===  e.country) {
       return (
         <Grid xs={4} style={{ marginBottom: "10%" }}>

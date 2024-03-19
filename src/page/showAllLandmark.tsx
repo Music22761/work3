@@ -20,7 +20,6 @@ import { Link, useNavigate } from "react-router-dom";
 function ShowAllLandmark() {
   const userStorage: User = JSON.parse(localStorage.getItem("objUser")!);
   const navigate = useNavigate();
-  //   const [user,setUser] = useState();
 
   return (
     <>

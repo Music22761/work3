@@ -13,9 +13,11 @@ import {
   import { Link, useNavigate } from "react-router-dom";
   import LockIcon from "@mui/icons-material/Lock";
   import EmailIcon from "@mui/icons-material/Email";
-  import data from "../json/data.json"
-  
+  import data from "../json/data.json";
+  import CryptoJS from 'crypto-js';
   function LoginPage() {
+
+
     const navigate = useNavigate();
   
     let username = "";
@@ -113,7 +115,7 @@ import {
                     console.log(username);
                     console.log(password);
                     // btnClick(email,password);
-                    data.users.map((e) => {
+                    data.users.map(async (e) => {
                       // console.log("In Map "+email);
                       try {
                         if (String(e.username) === String(username)) {
@@ -121,14 +123,37 @@ import {
   
                           if (String(e.password) === String(password) && e.type == 1) {
                             console.log("Password Chk");
-                            localStorage.clear();
-                            localStorage.setItem("objUser",JSON.stringify(e))
+                            
+                            const hash = CryptoJS.SHA256(e.password);
+
+                            console.log(hash.toString);
+                            const dataHash = {
+                              id:e.id,
+                              type:e.type,
+                              username:e.username,
+                              password:hash.toString(),
+                              country:e.country
+                            }
+                            localStorage.clear()
+                            localStorage.setItem("objUser", JSON.stringify(dataHash));
+                            
+
                             navigate(`/homeAfterLogin`)
                             alert("Login Success!! Welcome User");
                           }else if (String(e.password) === String(password) && e.type == 99) {
                             console.log("Password Chk");
-                            localStorage.clear();
-                            localStorage.setItem("objUser",JSON.stringify(e))
+                            const hash = CryptoJS.SHA256(e.password);
+
+                            console.log(hash.toString);
+                            const dataHash = {
+                              id:e.id,
+                              type:e.type,
+                              username:e.username,
+                              password:hash.toString(),
+                              country:e.country
+                            }
+                            localStorage.clear()
+                            localStorage.setItem("objUser", JSON.stringify(dataHash));
                             navigate(`/showAllUser`)
                             alert("Login Success!! Welcome Admin");
                           }
