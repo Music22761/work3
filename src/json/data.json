@@ -1,0 +1,59 @@
+{
+    "users": [
+      {
+        "id":1,
+        "type": 99,
+        "username": "admin",
+        "password": "password123",
+        "avatar": "https://thicc-af.mywaifulist.moe/pending/waifus/EHSGWJCjDTOIUZFbAe0F1AXy6MDTuTg2CYfp7QCo.jpg",
+        "country": "Thailand"
+      },
+      {
+        "id":2,
+        "type": 1,
+        "username": "user1",
+        "password": "password456",
+        "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnPL3X178cftlbsOqFaT4BSRUHefjGz7HK4A&s",
+        "country": "Thailand"
+      },
+      {
+        "id":3,
+        "type": 1,
+        "username": "user2",
+        "password": "password789",
+        "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjP8GmCuprOTpspQNLG1aW5d7kiySlc3hdkab2kUxzTQ&s",
+        "country": "Japan"
+      }
+    ],
+    "landmarks": [
+      {
+        "id":1,
+        "country": "Thailand",
+        "name": "Wat Pho",
+        "description": "วัดพระเชตุพนวิมลมังคลารามราชวรมหาวิหาร",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3Ont5WffS1XcvxCHMuEEjfayQg78z3yr89w&s"
+      },
+      {
+        "id":2,
+        "country": "Thailand",
+        "name": "Grand Palace",
+        "description": "พระบรมมหาราชวัง",
+        "image": "https://api.tourismthailand.org/upload/live/place_thumbnail/20681-9327.png"
+      },
+      {
+        "id":3,
+        "country": "Japan",
+        "name": "Mount Fuji",
+        "description": "ภูเขาไฟฟูจิ",
+        "image": "https://seektour.com/wp-content/uploads/2023/04/shutterstock_1345202822-scaled.jpg"
+      },
+      {
+        "id":4,
+        "country": "Japan",
+        "name": "Kiyomizu-dera",
+        "description": "วัดคิโยมิซุ",
+        "image": "https://www.jnto.or.th/wp-content/uploads/2014/08/news-temples-2014-03.png"
+      }
+    ]
+  }
+  
